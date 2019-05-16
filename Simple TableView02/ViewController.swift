@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
-    
 
     @IBOutlet weak var myTableView: UITableView!
     var animals = ["Cat","Dog","Bird","Pig","Horse","Whale"]
