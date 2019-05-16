@@ -22,7 +22,6 @@ class DetailViewController: UIViewController {
         myImageView.image = UIImage(named: myImage!)
         self.title = myTitle
     }
-    
 
     /*
     // MARK: - Navigation
