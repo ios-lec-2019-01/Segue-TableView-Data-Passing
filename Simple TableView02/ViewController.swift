@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var myTableView: UITableView!
     var animals = ["Cat","Dog","Bird","Pig","Horse","Whale"]
-    var year = ["3","5","10","2","6","3"]
+    var kor = ["고양이","강아지","새","돼지","말","고래"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     public func numberOfSections(in tableView: UITableView) -> Int{
-        return 2
+        return 1
     }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
@@ -59,11 +59,34 @@ class ViewController: UIViewController, UITableViewDataSource {
         print("section: \(indexPath.section)    row:\(indexPath.row)")
     
         cell.textLabel?.text = animals[row]
-        cell.detailTextLabel?.text = year[row]
+        cell.detailTextLabel?.text = kor[row]
         
         //image넣기
         cell.imageView?.image = UIImage(named: animals[row])
         return cell
     }
+    
+    // DetailViewController의 myData 변수에 "Cat"를 보냄
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addgo" {
+            let addVC = segue.destination as! AddViewController
+            addVC.myData = animals[1]
+            addVC.myImage = animals[1]
+            addVC.myTitle = kor[1]
+            
+        } else if segue.identifier == "detailgo" {
+            let detailVC = segue.destination as! DetailViewController
+            
+            // 현재 선택된 indexPath.row
+            let myIndexPath = myTableView.indexPathForSelectedRow
+            let myRow = myIndexPath?.row
+            
+            detailVC.myData = animals[myRow!]
+            detailVC.myImage = animals[myRow!]
+            detailVC.myTitle = kor[myRow!]
+            
+        }
+    }
+    
 }
 

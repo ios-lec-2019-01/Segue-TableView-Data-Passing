@@ -46,7 +46,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Jwl-IM-tPb" kind="show" identifier="go" id="K7p-yY-foH"/>
+                                            <segue destination="Jwl-IM-tPb" kind="show" identifier="detailgo" id="K7p-yY-foH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -101,9 +101,34 @@
                     <view key="view" contentMode="scaleToFill" id="TmX-5i-oGL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label           " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAH-Wy-aLO">
+                                <rect key="frame" x="142" y="104" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sye-uf-gKB">
+                                <rect key="frame" x="67.5" y="165" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="4lY-lb-PvU"/>
+                                    <constraint firstAttribute="height" constant="240" id="PnV-3r-d6i"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.1630341219" green="1" blue="0.95735453020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Sye-uf-gKB" firstAttribute="centerX" secondItem="TmX-5i-oGL" secondAttribute="centerX" id="0bN-WN-33U"/>
+                            <constraint firstItem="Sye-uf-gKB" firstAttribute="top" secondItem="QAH-Wy-aLO" secondAttribute="bottom" constant="40" id="Dwl-6r-x2s"/>
+                            <constraint firstItem="QAH-Wy-aLO" firstAttribute="top" secondItem="iXL-2h-bA6" secondAttribute="top" constant="40" id="IoA-ej-zle"/>
+                            <constraint firstItem="QAH-Wy-aLO" firstAttribute="centerX" secondItem="TmX-5i-oGL" secondAttribute="centerX" id="Xec-Fx-6BH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iXL-2h-bA6"/>
                     </view>
+                    <connections>
+                        <outlet property="myImageView" destination="Sye-uf-gKB" id="zTI-ur-QUG"/>
+                        <outlet property="myLabel" destination="QAH-Wy-aLO" id="qW6-9u-AXY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tru-5r-2wr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,9 +141,34 @@
                     <view key="view" contentMode="scaleToFill" id="GfX-ZY-yNv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label.           " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkf-5W-QXP">
+                                <rect key="frame" x="140" y="94" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ztG-uA-K7I">
+                                <rect key="frame" x="67.5" y="145" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="9FD-d2-0jK"/>
+                                    <constraint firstAttribute="width" constant="240" id="Vf1-Oe-nPA"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ztG-uA-K7I" firstAttribute="top" secondItem="Pkf-5W-QXP" secondAttribute="bottom" constant="30" id="DtC-Fw-ivb"/>
+                            <constraint firstItem="Pkf-5W-QXP" firstAttribute="centerX" secondItem="GfX-ZY-yNv" secondAttribute="centerX" id="PUR-2v-9wx"/>
+                            <constraint firstItem="ztG-uA-K7I" firstAttribute="centerX" secondItem="GfX-ZY-yNv" secondAttribute="centerX" id="QQK-SC-fi6"/>
+                            <constraint firstItem="Pkf-5W-QXP" firstAttribute="top" secondItem="h3A-PG-CwD" secondAttribute="top" constant="30" id="Tcf-DW-136"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="h3A-PG-CwD"/>
                     </view>
+                    <connections>
+                        <outlet property="myImageView" destination="ztG-uA-K7I" id="syy-Lj-OtC"/>
+                        <outlet property="myLabel" destination="Pkf-5W-QXP" id="FnH-JA-GhX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGD-O9-ahu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

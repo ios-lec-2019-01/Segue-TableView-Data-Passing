@@ -9,11 +9,20 @@
 import UIKit
 
 class AddViewController: UIViewController {
-
+    @IBOutlet weak var myLabel: UILabel!
+    
+    @IBOutlet weak var myImageView: UIImageView!
+    // viewController에서 보내준 "Cat"을 저장할 변수 선언
+    var myData: String?
+    var myImage: String?
+    var myTitle: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        myLabel.text = myData
+        myImageView.image = UIImage(named: myImage!)
+        self.title = myTitle
     }
     
 
